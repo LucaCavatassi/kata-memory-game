@@ -12,9 +12,17 @@ const classNames = ['alien', 'bug', 'duck', 'rocket', 'spaceship', 'tiktac', 'al
 // Shuffle randomness
 classNames.sort(() => Math.random() - 0.5);
 
+// Array to compare couples
 let selectedItems = [];
 
+// Error counter and html relative
+let errorCounter = 0;
+let errorHtml = document.getElementById('errorNumber')
+errorHtml.innerText = errorCounter;
+
+// Img List
 const imgList = document.getElementById('imgList');
+// Img elements
 const listItems = imgList.querySelectorAll('li');
 
 listItems.forEach((elem, index) => {
@@ -23,24 +31,22 @@ listItems.forEach((elem, index) => {
 
     elem.addEventListener("click", (e) => {
         let elemClass = elem.classList[0]; // Get the first class only
-        const img = elem.querySelector('img'); 
-        // Assign the corresponding imgUrl
-        img.src = elements[elemClass].imgUrl;
-        // Push the classname added to the selected items, so can track the clicks
-        selectedItems.push({elem, elemClass}) 
-        console.log(selectedItems);
+        const img = elem.querySelector('img') //Get the image tag inside the li
+
+        img.src = elements[elemClass].imgUrl; // Assign the corresponding imgUrl
+        selectedItems.push({elem, elemClass})  // Push the classname added to the selected items, so can track the clicks
         
-        // If array has length of 2 so there are two elements 
-        if (selectedItems.length === 2) {
-            // Confront them if they are equal match found go on
-            if (selectedItems[0].elemClass === selectedItems[1].elemClass) {
+        if (selectedItems.length === 2) { // If array has length of 2 so there are two elements 
+            if (selectedItems[0].elemClass === selectedItems[1].elemClass) { // Confront them if they are equal match found go on
                 console.log('match found');
-            } else {
-                selectedItems.forEach((elem) => {
-                    let img = elem.elem.querySelector('img')
-                    img.src = './assets/images/back.png'
-                })
-                selectedItems = [];
+            } else { // if not hide them after 1 second
+                setTimeout(() => {
+                    selectedItems.forEach((elem) => {
+                        let img = elem.elem.querySelector('img') //Get the image tag inside the li
+                        img.src = './assets/images/back.png' //Return to hide
+                    })
+                    selectedItems = []; //Empty the array
+                }, 1000)
             }
         }
         
