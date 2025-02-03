@@ -58,3 +58,25 @@ body {
 #imgSide ul li img {
     width: 100%;
 }
+
+/***** WIN-SCREEN *****/
+#win-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    padding: 5rem;
+    padding-top: 2rem;
+}
+
+#win-screen button {
+    width: 50%;
+    margin: auto;
+    height: 3rem;
+    margin-top: 2rem;
+    font-family: inherit;
+    color: white;
+    background-color: rgb(247 11 105);
+    border-color: white;
+}

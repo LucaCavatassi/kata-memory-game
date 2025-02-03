@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="logo">
+    <header id="logo">
         <img src="./assets/logo.png" alt="logo">
-    </div>
+    </header>
 
     <div id="grid">
         <div id="imgSide">
@@ -43,6 +43,13 @@
                 <h2 id="errorNumber">5</h2>
             </div>
         </div>
+    </div>
+
+    <div id="win-screen" style="display: none;">
+        <h1>You win!</h1>
+        <h2>You found all the pairs!</h2>
+        <h2>Click the button to restart!</h2>
+        <button id="refreshBtn">Restart Game</button>
     </div>
     <!-- JS -->
     <script src="./script.js"></script>
