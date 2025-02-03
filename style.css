@@ -1,5 +1,19 @@
+/***** COMMON *****/
 body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     background-color: rgb(48, 50, 232);
     color: white;
     font-family: "Press Start 2P", serif;
+}
+
+/***** LOGO *****/
+#logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    img {
+        width: 25rem;
+    }
 }
