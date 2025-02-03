@@ -9,11 +9,52 @@ body {
 }
 
 /***** LOGO *****/
-#logo{
+#logo {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    img {
-        width: 25rem;
-    }
+}
+
+#logo img {
+    width: 25rem;
+}
+
+/***** GRID *****/
+#grid {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 5rem;
+    padding-top: 2rem;
+}
+
+#infoSide {
+    width: 40%;
+    padding-left: 2rem;
+    padding-top: 7rem;
+}
+
+#errorCounter {
+    display: flex;
+    align-items: center;
+}
+
+#imgSide {
+    width: 60%;
+}
+
+#imgSide ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#imgSide ul li {
+    width: calc(100% / 4);
+}
+
+#imgSide ul li img {
+    width: 100%;
 }
