@@ -19,6 +19,8 @@ let selectedItems = [];
 let errorCounter = 0;
 let errorHtml = document.getElementById('errorNumber')
 errorHtml.innerText = errorCounter;
+// Pair founded counter
+let pairCounter = 0;
 
 // Img List
 const imgList = document.getElementById('imgList');
@@ -39,9 +41,19 @@ listItems.forEach((elem, index) => {
         if (selectedItems.length === 2) { // If array has length of 2 so there are two elements 
             if (selectedItems[0].elemClass === selectedItems[1].elemClass) { // Confront them if they are equal match found go on
                 console.log('match found');
+                pairCounter++
+                if (pairCounter === 6) {
+                    console.log('You win');
+                }
+                selectedItems = [];
             } else { // if not hide them after 1 second
+                // Add 1 to error counter and show it
+                errorCounter++
+                errorHtml.innerText = errorCounter;
+
                 setTimeout(() => {
                     selectedItems.forEach((elem) => {
+                        
                         let img = elem.elem.querySelector('img') //Get the image tag inside the li
                         img.src = './assets/images/back.png' //Return to hide
                     })
