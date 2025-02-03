@@ -16,7 +16,7 @@ body {
 }
 
 #logo img {
-    width: 10rem;
+    width: 25rem;
 }
 
 /***** GRID *****/
@@ -31,7 +31,7 @@ body {
 #infoSide {
     width: 40%;
     padding-left: 2rem;
-    padding-top: 12rem;
+    padding-top: 7rem;
 }
 
 #errorCounter {
