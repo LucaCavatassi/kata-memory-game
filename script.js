@@ -10,5 +10,13 @@ const elements = {
 }
 
 Object.entries(elements).forEach((element) => {
-    console.log(element[1].shown)
+    // console.log(element[1].shown)
+});
+
+
+const imgList = document.getElementById('imgList');
+const listItems = imgList.querySelectorAll('li');
+
+listItems.forEach((elem, index) => {
+    elem.setAttribute('id', `item-${index + 1}`);
 });
