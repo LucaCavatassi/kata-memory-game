@@ -21,5 +21,8 @@ listItems.forEach((elem, index) => {
     elem.setAttribute('id', `item-${index + 1}`);
     elem.addEventListener("click", (e) => {
         console.log(elem.id);
+        const img = elem.querySelector('img');
+        img.src = elements.alien.imgUrl;
+        
     });
 });
