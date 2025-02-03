@@ -19,4 +19,7 @@ const listItems = imgList.querySelectorAll('li');
 
 listItems.forEach((elem, index) => {
     elem.setAttribute('id', `item-${index + 1}`);
+    elem.addEventListener("click", (e) => {
+        console.log(elem.id);
+    });
 });
